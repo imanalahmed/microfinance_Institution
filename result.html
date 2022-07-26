@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+      <div class="logo">
+        <div class="logotxt">
+          <h1>My Company</h1>
+        </div>
+      </div>
+      <nav>
+      <a href="./index.html">home</a>
+      <a href="./aboutus.html">aboutus</a>
+      <a href="./products.html">products</a>
+      <a href="./req_loan.html">req_loan</a>
+      </nav>
+    </header>
+    <div class="home_home resulthome">
+      <div class="fullName">
+        <div>FullName: <span id="FullName"> </span></div>
+        <br>
+        <div>nationalId1: <span id="nationalId1"> </span></div><br>
+        <div> birthday1: <span id="birthday1"> </span></div><br>
+        <div> mobileNumber1: <span id="mobileNumber1"> </span></div><br>
+        <div>email1: <span id="email1"> </span></div><br>
+        <div> valueOfTax1: <span id="valueOfTax1"> </span></div><br>
+        <div> Loanresult1: <span id="Loanresult1"> </span></div><br>
+        <div> paymentMethodresult: <span id="paymentMethodresult"> </span></div><br>
+        <div> numberOfYearresult: <span id="numberOfYearresult"> </span></div><br>
+        <div> anniulTaxresult: <span id="anniulTaxresult"> </span></div><br>
+        <div> amountOfMoney: <span id="amountOfMoneyresult"> </span></div><br>
+        <div> wayOfPaymentResult: <span id="wayOfPaymentResult"> </span></div><br>
+      </div>
+      <script>
+        document.getElementById("FullName").innerHTML = localStorage.getItem("fullname");
+        document.getElementById("nationalId1").innerHTML = localStorage.getItem("nationalId");
+        document.getElementById("birthday1").innerHTML = localStorage.getItem("birthday");
+        document.getElementById("mobileNumber1").innerHTML = localStorage.getItem("mobileNumber");
+        document.getElementById("email1").innerHTML = localStorage.getItem("email");
+        document.getElementById("valueOfTax1").innerHTML = localStorage.getItem("valueOfTax");
+        document.getElementById("Loanresult1").innerHTML = localStorage.getItem("Loan()");
+        document.getElementById("numberOfYearresult").innerHTML = localStorage.getItem("numberOfYear()");
+        document.getElementById("paymentMethodresult").innerHTML = localStorage.getItem("paymentMethod()");
+        document.getElementById("anniulTaxresult").innerHTML = localStorage.getItem("anniulTax()");
+        document.getElementById("wayOfPaymentResult").innerHTML = localStorage.getItem("wayOfPayment()");
+        document.getElementById("amountOfMoneyresult").innerHTML = amountOfMoney();
+        function amountOfMoney() {
+          let b = Number(localStorage.getItem("valueOfTax"));
+          let c = Number(localStorage.getItem("paymentMethod()"));
+          let d = Number(localStorage.getItem("anniulTax()"))
+          let totalAmmount = b + (d * b);
+          let numberOfPayment = localStorage.getItem("numberOfYear()") * c;
+          return (totalAmmount / numberOfPayment)
+        }
+      </script>
+    </div>
+</body>
+</html>

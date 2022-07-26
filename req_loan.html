@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onload="Captcha();" >
+    <header>
+        <div class="logo">
+            <div class="logotxt">
+                <h1>My Company</h1>
+            </div>
+        </div>
+        <nav>
+            <a href="./index.html">home</a>
+            <a href="./aboutus.html">aboutus</a>
+            <a href="./products.html">products</a>
+            <a href="./req_loan.html">req_loan</a>
+        </nav>
+    </header>
+    <div class="home_req">
+    <form  id="idOfForm" onsubmit="return setAction(this)" >
+       
+        <div class="partone">
+            <div class="fullName">
+                <h5>name:</h5>
+                <input required id="fullName" type="text" placeholder="Full name">
+            </div>
+            <div class="nationalId">
+                <h5>national Id:</h5>
+                <input required id="nationalId"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    type="number" maxlength="11" min="1" placeholder="national Id">
+            </div>
+            <div class="birthday">
+                <h5>date of birthday:</h5>
+                <input required id="birthday" type="date">
+            </div>
+            <div class="mobileNumber">
+                <h5>mobile Number:</h5>
+                <input required id="mobileNumber" type="number" maxlength="10" placeholder="0912345678">
+            </div>
+            <div class="email">
+                <h5>your email:</h5>
+                <input required id="email" type="email" placeholder="enter your Email">
+            </div>
+            <div class="valueOfTax">
+                <h5>value Of Loan:</h5>
+                <input required id="valueOfTax" type="number" max="10000000" min="1000000" placeholder="1M ... to ... 10M">
+            </div>
+        </div>
+        <!-- typeOfLoan chick box start -->
+        <div class="form_dep">
+            <div class="typeOfLoan ">
+                <p><strong>typeOfLoan</strong></p>
+                <input type="radio" id="typeOfLoan1" name="Loan" value="saving account" checked>
+                <label>saving account</label>
+                <br>
+                <input type="radio" id="typeOfLoan2" name="Loan" value="educational loan" checked>
+                <label>educational loan</label>
+                <br>
+                <input type="radio" id="typeOfLoan3" name="Loan" value="home loan" checked>
+                <label>home loan3</label>
+                <br>
+                <input type="radio" id="typeOfLoan4" name="Loan" value="commercial loan" checked>
+                <label>commercial loan</label>
+                <br>
+                <input type="radio" id="typeOfLoan7" name="Loan" value="agricultural loan" checked>
+                <label>agricultural loan</label>
+                <br>
+                <input type="radio" id="typeOfLoan5" name="Loan" value="Transportation Loan" checked>
+                <label>Transportation Loan</label>
+                <br>
+                <input type="radio" id="typeOfLoan6" name="Loan" value="Loan for workshops" checked>
+                <label>Loan for workshops</label>
+            </div>
+        </div>
+        <!-- typeOfLoan chick box end -->
+        <div class="form_dep">
+            <div class="numberOfYears">
+                <p><strong>numberOfYears</strong></p>
+                <input type="radio" id="numberOfYears1" name="year" value="3" checked>
+                <label>numberOfYears1</label>
+                <br>
+                <input type="radio" id="numberOfYears2" name="year" value="5" checked>
+                <label>numberOfYears2</label>
+                <br>
+                <input type="radio" id="numberOfYears3" name="year" value="10" checked>
+                <label>numberOfYears3</label>
+                <br>
+                <input type="radio" id="numberOfYears4" name="year" value="15" checked>
+                <label>numberOfYears4</label>
+                <br>
+                <input type="radio" id="numberOfYears5" name="year" value="20" checked>
+                <label>numberOfYears5</label>
+            
+            </div>
+        </div>
+        <div class="form_dep">
+            <div class="paymentMethod">
+                <p><strong>paymentMethod</strong></p>
+                <input type="radio" id="paymentMethod1" name="paymentMethod" value="12" checked>
+                <label>monthly</label>
+                <br>
+                <input type="radio" id="paymentMethod2" name="paymentMethod" value="4" checked>
+                <label>quarter</label>
+                <br>
+                <input type="radio" id="paymentMethod3" name="paymentMethod" value="1" checked>
+                <label>year</label>
+                <br>
+            </div>
+        </div>
+        <!-- start captcha part -->
+        
+            <div class="capt">
+                <h2 type="text" id="mainCaptcha"></h2>
+                <p><input type="button" id="refresh" onclick="Captcha();" /></p>
+                <input type="text" id="txtInput" />
+                <br>
+                <input type="submit"  onclick="handle();">
+            </div>
+        
+    </form>
+    </div>
+    <script src="./myFunctions.js"></script>
+</body>
+
+</html>
